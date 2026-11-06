@@ -30,15 +30,15 @@ TIMEFRAMES = {"M15": mt5.TIMEFRAME_M15, "H1": mt5.TIMEFRAME_H1, "D1": mt5.TIMEFR
 TIMEFRAME_DELTAS = {"M15": timedelta(minutes=15), "H1": timedelta(hours=1), "D1": timedelta(days=1)}
 
 # Trial ranges; expand these to the K/D/smooth intervals you want.
-K_VALUES = range(5, 51, 5)
-D_VALUES = range(5, 51, 5)
-SMOOTH_VALUES = range(20, 101, 5)
+K_VALUES = range(5, 100, 5)
+D_VALUES = range(5, 100, 5)
+SMOOTH_VALUES = range(5, 100, 5)
 UPPER_BOUNDS = [90]
 LOWER_BOUNDS = [10]
 
 ATR_PERIOD = 14
 ATR_MULTIPLIERS = [1.5]  # Test alternatives later: [1.0, 1.5, 2.0, 2.5, 3.0]
-REWARD_RISK_RATIO = 2.0  # 2R target for each 1R initial ATR stop
+REWARD_RISK_RATIO = 1.2  # 1.2R target for each 1R initial ATR stop
 ASSUMED_SPREAD_PIPS = 1.5  # 0=ignore spread; e.g. 1.0 for assumed fixed 1 pip spread
 WARMUP_DAYS = 500  # allows for D1 trading days and the largest indicator lookback
 OUTPUT_DIR = Path(__file__).resolve().parent / "backtest_results"
